@@ -45,6 +45,46 @@ npx ts-node ./src/app.ts -b <base> -l <limit> [-s] [-f]
 npx ts-node ./src/app.ts -b 11 -l 13 -s
 ```
 
+## Building Executables
+
+The project can be packaged into standalone executables that don't require Node.js to be installed.
+
+### Build macOS executable
+
+```bash
+npm run build:macos
+```
+
+This creates a `multiplicacion-macos` executable that can run on macOS systems.
+
+### Build executables for all platforms
+
+```bash
+npm run build:all
+```
+
+This creates executables for:
+- macOS: `multiplicacion-macos`
+- Linux: `multiplicacion-linux`
+- Windows: `multiplicacion-win.exe`
+
+### Using the executable
+
+Once built, you can run the executable directly:
+
+```bash
+# macOS
+./multiplicacion-macos -b 11 -l 13 -s
+
+# Linux
+./multiplicacion-linux -b 11 -l 13 -s
+
+# Windows
+multiplicacion-win.exe -b 11 -l 13 -s
+```
+
+The executable supports all the same flags as the development version.
+
 ## Project Structure
 
 ```
@@ -71,3 +111,4 @@ output/                   # Generated multiplication table files
 - Save output to text files
 - File overwrite protection (use `-f` flag to force)
 - Watch mode for automatic reload during development
+- Standalone executables for macOS, Linux, and Windows

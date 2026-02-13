@@ -1,2 +1,8 @@
 node_modules
 output
+dist
+build
+*.exe
+multiplicacion-macos
+multiplicacion-linux
+multiplicacion-win.exe
