@@ -1,0 +1,71 @@
+# 04-Multiplicación
+
+A Node.js/TypeScript CLI application that generates multiplication tables and saves them to files.
+
+## Setup
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+## Usage
+
+### Development with watch mode
+
+```bash
+npm run dev:nodemon
+```
+
+### Direct execution
+
+```bash
+npm run dev
+```
+
+### Custom arguments
+
+```bash
+npx ts-node ./src/app.ts -b <base> -l <limit> [-s] [-f]
+```
+
+**Flags:**
+
+- `-b, --base` - Base number for multiplication table (required)
+- `-l, --limit` - Limit/number of multiplications (required)
+- `-s, --save` - Save output to file
+- `-f, --force` - Overwrite existing files
+
+**Example:**
+
+```bash
+npx ts-node ./src/app.ts -b 11 -l 13 -s
+```
+
+## Project Structure
+
+```
+src/
+├── app.ts                 # Main application entry point
+├── app.logic.ts          # Business logic
+├── config/
+│   └── plugins/
+│       └── args.plugins.ts   # CLI argument parser configuration
+└── presentation/
+    ├── server-app.ts    # Server/presentation layer
+    └── domain/
+        └── use-cases/
+            ├── create-table.use-case.ts    # Table generation logic
+            └── save-file.use-case.ts       # File saving logic
+
+output/                   # Generated multiplication table files
+```
+
+## Features
+
+- Generate multiplication tables for any base number
+- Customize the number of multiplications
+- Save output to text files
+- File overwrite protection (use `-f` flag to force)
+- Watch mode for automatic reload during development
