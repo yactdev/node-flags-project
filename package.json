@@ -6,7 +6,10 @@
   "scripts": {
     "dev:nodemon": "nodemon",
     "dev": "ts-node ./src/app.ts -b 11 -f -s -l 11",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "build:macos": "npm run build && pkg dist/app.js --target node18-macos-x64 --output multiplicacion-macos",
+    "build:all": "npm run build && pkg dist/app.js --targets node18-macos-x64,node18-linux-x64,node18-win-x64 --output multiplicacion"
   },
   "keywords": [],
   "author": "",
@@ -14,11 +17,19 @@
   "devDependencies": {
     "@types/node": "^25.2.3",
     "@types/yargs": "^17.0.35",
+    "@yao-pkg/pkg": "^6.13.1",
     "nodemon": "^3.1.11",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "yargs": "^18.0.0"
+    "yargs": "^17.7.2"
+  },
+  "pkg": {
+    "scripts": "dist/**/*.js",
+    "targets": [
+      "node18-macos-x64"
+    ],
+    "outputPath": "build"
   }
 }
