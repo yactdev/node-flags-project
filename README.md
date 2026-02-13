@@ -35,7 +35,9 @@ npx ts-node ./src/app.ts -b <base> -l <limit> [-s] [-f]
 - `-b, --base` - Base number for multiplication table (required)
 - `-l, --limit` - Limit/number of multiplications (required)
 - `-s, --save` - Save output to file
-- `-f, --force` - Overwrite existing files
+- `-f, --file` - Overwrite existing files
+- `-n, --name` - Name of the file to save the multiplication table
+- `-d, --destination` - Destination folder to save the multiplication table file
 
 **Example:**
 
