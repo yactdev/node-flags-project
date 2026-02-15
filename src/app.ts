@@ -1,5 +1,6 @@
 import { yarg } from "./config/plugins/args.plugins";
 import { ServerApp } from "./presentation/server-app";
+import os from "node:os";
 
 (async () => {
   await main();
