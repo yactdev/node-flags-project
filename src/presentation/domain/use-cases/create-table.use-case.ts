@@ -15,13 +15,13 @@ export class CreateTable implements CreateTableUseCase {
 
   execute({ base, limit = 10 }: CreateTableOptions) {
     let table = "";
-    const title = `===============================
-Multiplication Table of ${base}
-===============================\n\n`;
+    const title = `=================================
+    Multiplication Table of ${base}
+=================================\n`;
 
     for (let i = 1; i <= limit; i++) {
       const result = base * i;
-      table += `${base} x ${i} = ${result}\n`;
+      table += `\n${base} x ${i} = ${result}`;
     }
 
     return title + table;
